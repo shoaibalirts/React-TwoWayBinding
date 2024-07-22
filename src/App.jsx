@@ -5,12 +5,12 @@ import { useState } from "react";
 
 function App() {
   const [feedback, setFeedback] = useState();
-  const [teacherName, setTeacherName] = useState();
+  const [studentName, setstudentName] = useState();
   const feedbackHandleChange = (event) => {
     setFeedback(event.target.value);
   };
   const nameHandleChange = (event) => {
-    setTeacherName(event.target.value);
+    setstudentName(event.target.value);
   };
   return (
     <>
@@ -22,13 +22,13 @@ function App() {
         </p>
         <p>
           <label>Your Name</label>
-          <input type="text" onChange={nameHandleChange} value={teacherName} />
+          <input type="text" onChange={nameHandleChange} value={studentName} />
         </p>
       </section>
       <section id="draft">
         <h2>Your feedback</h2>
 
-        <Review feedback={feedback} student={teacherName} />
+        <Review feedback={feedback} student={studentName} />
 
         <p>
           <button>Save</button>
